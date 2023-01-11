@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoeBrand</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/shop.css">
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header>
+
+    <div class="mobile-menu">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <a href="index.html" class="logo">Shoe<span>Brand</span></a>
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+        <a href="#">Blank</a>
+    </nav>
+
+    <div class="icons">
+        <a href="#" class="fas fa-heart"></a>
+        <a href="#" class="fas fa-shopping-cart"></a>
+        <a href="#" class="fas fa-user"></a>
+    </div>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- hero section starts -->
+
+<div class="hero-img"></div>
+
+<section class="hero">
+
+    <div class="text">
+        <h1>Improve your confidence on the court.</h1>
+        <h2 class="subheading">A brand built to take your game to the next level.</h2>
+        
+        <svg class="down-arrow" viewBox="0 0 16 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.29289 131.707C7.68341 132.098 8.31658 132.098 8.7071 131.707L15.0711 125.343C15.4616 124.953 15.4616 124.319 15.0711 123.929C14.6805 123.538 14.0474 123.538 13.6568 123.929L7.99999 129.586L2.34314 123.929C1.95262 123.538 1.31945 123.538 0.928927 123.929C0.538402 124.319 0.538402 124.953 0.928927 125.343L7.29289 131.707ZM7 -4.37114e-08L6.99999 131L8.99999 131L9 4.37114e-08L7 -4.37114e-08Z" fill="black"/>
+        </svg>
+    </div>
+
+</section>
+
+<!-- hero section ends -->
+
+<!-- products section starts  -->
+
+<section class="products" id="products">
+
+    <h1 class="heading"><span>Newest </span>Arrivals</h1>
+
+    <div class="product-container active">
+
+        <div class="box">
+            <div class="icons">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <img class="product-img" src="images/banner-product.png" alt="">
+            <div class="content">
+                <h3 class="title">Nike AirMax</h3>
+                <div class="price">$120.99 <span>$150.99</span></div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="#" class="btn">Add to Cart</a>
+
+                <div id="prev" class="fas fa-chevron-left" onclick="prev()"></div>
+                <div id="next" class="fas fa-chevron-right" onclick="next()"></div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- products section ends  -->
+
+<!-- featured section starts  -->
+
+<section class="featured" id="featured">
+
+    <h1 class="heading"><span>Featured</span> Products</h1>
+
+    <div class="row">
+        <div class="image-container">
+            <div class="small-image">
+                <img src="images/f-img-1.1.png" class="featured-image-1" alt="">
+                <img src="images/f-img-1.2.png" class="featured-image-2" alt="">
+                <img src="images/f-img-1.3.png" class="featured-image-3" alt="">
+                <img src="images/f-img-1.4.png" class="featured-image-4" alt="">
+            </div>
+            <div class="big-image">
+                <img src="images/f-img-1.1.png" class="big-image-1" alt="">
+            </div>
+        </div>
+        <div class="content">
+            <h3>Nike Revolution 5 Blk/Red</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+             Dicta facilis praesentium odit voluptas illum iure libero
+             quis fuga commodi. Autem.</p>
+            <div class="price">$80.99 <span>$120.99</span></div>
+            <a href="#" class="btn">Add to Cart</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="image-container">
+            <div class="small-image">
+                <img src="images/f-img-2.1.png" class="featured-image-2" alt="">
+                <img src="images/f-img-2.2.png" class="featured-image-2" alt="">
+                <img src="images/f-img-2.3.png" class="featured-image-2" alt="">
+                <img src="images/f-img-2.4.png" class="featured-image-2" alt="">
+            </div>
+            <div class="big-image">
+                <img src="images/f-img-2.1.png" class="big-image-2" alt="">
+            </div>
+        </div>
+        <div class="content">
+            <h3>Nike Revolution 5 Wht/Blu</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+             Dicta facilis praesentium odit voluptas illum iure libero
+             quis fuga commodi. Autem.</p>
+            <div class="price">$80.99 <span>$120.99</span></div>
+            <a href="#" class="btn">Add to Cart</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="image-container">
+            <div class="small-image">
+                <img src="images/f-img-3.1.png" class="featured-image-3" alt="">
+                <img src="images/f-img-3.2.png" class="featured-image-3" alt="">
+                <img src="images/f-img-3.3.png" class="featured-image-3" alt="">
+                <img src="images/f-img-3.4.png" class="featured-image-3" alt="">
+            </div>
+            <div class="big-image">
+                <img src="images/f-img-3.1.png" class="big-image-3" alt="">
+            </div>
+        </div>
+        <div class="content">
+            <h3>Nike Pegasus 37 Blk/Ylw</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+             Dicta facilis praesentium odit voluptas illum iure libero 
+             quis fuga commodi. Autem.</p>
+            <div class="price">$80.99 <span>$120.99</span></div>
+            <a href="#" class="btn">Add to Cart</a>
+        </div>
+    </div>
+
+</section>
+
+<!-- featured section ends -->
+
+<!-- sale section starts -->
+
+<section class="sale">
+
+    <div class="content">
+       <span> Up to 50% off!</span>
+       <h3>Nike AirMax Shoes</h3>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde enim quas doloribus sed vero eum corporis iste atque rem similique.</p>
+       <div class="btn" id="modal-btn">Click Me!</div>
+    </div>
+ 
+    <div class="image">
+       <img src="images/banner-product.png" alt="Red and black Air Max shoe">
+    </div>
+ 
+</section>
+ 
+<!-- sale section ends -->
+ 
+<!-- modal section starts -->
+ 
+<section class="modal">
+ 
+    <div class="product-preview">
+       
+       <button class="close-btn"><i class="fas fa-times"></i></button>
+ 
+        <div class="image">
+            <img src="images/product-img1.jpg" alt="Red and black Air Max shoe">
+        </div>
+ 
+        <div class="content">
+            <h3>Nike AirMax</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+             Quas eligendi, corporis sed culpa assumenda odio ullam itaque 
+             porro facere quaerat!</p>
+          
+            <div class="stars" aria-hidden="true">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            <span>(250)</span>
+            </div>
+          
+            <div class="price">$49.99</div>
+            <a href="#" class="btn">Buy Now</a>
+        </div>
+       
+    </div>
+ 
+ </section>
+ 
+<!-- modal section ends -->
+
+<!-- footer section -->
+
+<section class="footer">
+
+    <a href="index.html" class="logo">Shoe<span>Brand</span></a>
+    <p class="address">Melrose Place, 90210 <br> USA</p>
+
+    <ul class="footer-links">
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+    </ul>
+
+</section>
+
+<!-- custom js file link -->
+<script src="js/shop.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap");
+@import url("style.css");
+body {
+  background: none;
+}
+
+.contact {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/hero2.jpg);
+  background-size: cover;
+  padding-top: 12em;
+}
+.contact .contact-container h1 {
+  color: #fff;
+  text-align: left;
+  padding-left: 0;
+}
+.contact .contact-container .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3em;
+  flex-direction: column-reverse;
+}
+.contact .contact-container .row form {
+  flex: 1 1 38em;
+}
+.contact .contact-container .row form .box {
+  padding: 1em 0;
+  margin-bottom: 1em;
+  font-size: 1.6rem;
+  border-radius: 0.3em;
+  border-bottom: 0.2em solid #444;
+  width: 100%;
+}
+.contact .contact-container .row form .box:focus {
+  border-color: #ed2d34;
+}
+.contact .contact-container .row form .box::-moz-placeholder {
+  padding-left: 0.5em;
+}
+.contact .contact-container .row form .box:-ms-input-placeholder {
+  padding-left: 0.5em;
+}
+.contact .contact-container .row form .box::placeholder {
+  padding-left: 0.5em;
+}
+.contact .contact-container .row form textarea {
+  height: 10em;
+  resize: none;
+}
+.contact .contact-container .row .contact-info {
+  flex: 1 1 38em;
+}
+.contact .contact-container .row .contact-info h3 {
+  font-size: 3rem;
+  color: #fff;
+}
+.contact .contact-container .row .contact-info .pgh {
+  font-size: 1.4rem;
+  color: #fff;
+  line-height: 1.5;
+  padding: 1em 0;
+}
+.contact .contact-container .row .contact-info .icons {
+  padding: 1.5em 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+.contact .contact-container .row .contact-info .icons i {
+  height: 3em;
+  width: 3em;
+  line-height: 3em;
+  border-radius: 50%;
+  font-size: 2rem;
+  background: #ed2d34;
+  color: #fff;
+  text-align: center;
+}
+.contact .contact-container .row .contact-info .icons p {
+  font-size: 1.5rem;
+  color: #fff;
+  line-height: 1.5;
+  padding: 1em 0;
+  padding: 0;
+}
+.contact .contact-container .row .contact-info .share {
+  padding-top: 2em;
+  display: flex;
+}
+.contact .contact-container .row .contact-info .share a {
+  font-size: 3rem;
+  margin-right: 1em;
+  color: #666;
+}
+.contact .contact-container .row .contact-info .share a:hover {
+  color: #ed2d34;
+}
+.contact .contact-container iframe {
+  display: none;
+}
+
+.footer {
+  margin-top: 0;
+  border-radius: 0;
+}
+
+@media (min-width: 768px) {
+  .contact .contact-container .row {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-areas: "form info";
+    width: 600px;
+    margin: 0 auto;
+  }
+  .contact .contact-container .row .contact-info {
+    grid-area: info;
+    display: block;
+  }
+  .contact .contact-container iframe {
+    display: block;
+    margin: 0 auto;
+    margin-top: 4em;
+    border-radius: 0.5em;
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    background: none;
+  }
+}
+@media (min-width: 1440px) {
+  .contact {
+    padding: 4em 5%;
+    padding-top: 12em;
+  }
+  .contact .contact-container {
+    display: grid;
+    grid-template-columns: 50% 40%;
+    grid-template-areas: "row map";
+    gap: 4em;
+  }
+  .contact .contact-container .row {
+    grid-area: row;
+    width: auto;
+  }
+  .contact .contact-container .row .contact-info {
+    width: 320px;
+  }
+  .contact .contact-container iframe {
+    grid-area: map;
+  }
+}/*# sourceMappingURL=contact.css.map */
