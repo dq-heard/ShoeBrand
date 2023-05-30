@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap');
+@import url('style.css');
+
+$red: #ed2d34;
+$black: #444;
+$white: #fff;
+$off-white: #eee;
+$light-color: #666;
+$border: .2em solid $black;
+$border-radius: .5em;
+
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 2em;
+}
+ 
+@mixin flex($align) {
+    display: flex;
+    align-items: $align;
+    flex-wrap: wrap;
+}
+ 
+@mixin titleText($titleSize) {
+    font-size: $titleSize;
+    color: $black;
+}
+ 
+@mixin graphText($graphSize) {
+    font-size: $graphSize;
+    color: $black;
+    line-height: 1.5;
+    padding: 1em 0;
+}
+
+body {
+    padding-top: 6em;
+    background: none;
+}
+
+h2, h3 {
+    padding: .5em 0 0;
+    @include titleText(3rem);
+}
+
+p, label, .cart {
+    padding: .5em;
+    @include graphText(1.6rem);
+}
+
+.products-container {
+    width: 100%;
+    padding: 2em;
+
+    .cart-title {
+        @include flex(center);
+        gap: 2em;
+    }
+
+    .right-side .btn {
+        border: 0;
+        border-radius: $border-radius;
+        padding: .5em;
+        background-color: $light-color;
+    
+        &:hover {
+            background-color: $off-white;
+            color: $red;
+        }
+
+        &.empty-btn {
+            margin-top: 1.3em;
+            font-size: 1.3rem;
+        }
+    }
+}
+
+.checkout-container {
+    @include flex(flex-start);
+    padding: 2em;
+    background: $off-white;
+
+    .pay-summary div:not(balance) {
+        padding-left: 3em;
+
+        &.balance {
+            padding-top: 5.4em;
+        }
+    }
+}
+
+.products, .cart {
+    padding-top: 1em;
+}
+
+.products {
+    div {
+        background: rgba(238, 238, 238, .7);
+        margin: 1em auto;
+        padding: 2em;
+        border-radius: $border-radius;
+        width: 245px;
+        display: block;
+    }
+
+    img {
+        max-width: 200px;
+        height: auto;
+    }
+
+    h3 {
+        font-weight: bold;
+    }
+
+    p {
+        padding: .5em 0;
+    }
+}
+
+.cart {
+    margin: 0 auto;
+
+    div {
+        border-radius: $border-radius;
+        background: rgba(238, 238, 238, .8);
+        margin: 1em auto;
+        padding: 1em 0 2em 1.5em;
+        width: 260px;
+    }
+
+    p {
+        padding: .3em;
+    }
+}
+
+.checkout {
+    margin-bottom: 4em;
+
+    .btn, input {
+        display: block;
+    }
+}
+
+.pay-summary {
+    h3 {
+        padding-top: 1em;
+    }
+
+    p {
+        padding: .5em 0;
+    }
+}
+
+.received {
+    padding: .3em;
+    border: 1px solid $light-color;
+    border-radius: $border-radius;
+    vertical-align: middle;
+}
+
+.footer {
+    margin-top: 0;
+}
+
+@media (min-width: 560px) {
+    .shopping-cart {
+        background: linear-gradient(0deg, rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url(../images/hero1.jpg);
+        background-position-x: center;
+    }
+
+    .products {
+        width: 240px;
+    }
+
+    .products-container {
+        @include flex(flex-start);
+        gap: 2em;
+
+        h2, .cart {
+            color: $white;
+        }
+    }
+
+    .checkout-container {
+        background: rgba(238, 238, 238, .93);
+
+        .left-side {
+            width: 270px;
+        }
+
+        .right-side h3 {
+            padding-top: .5em;
+        }
+    }
+
+    .footer {
+        border-radius: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .products-container {
+        display: block;
+        width: 768px;
+
+        .right-side {
+            height: 375px;
+        }
+    }
+    
+    .products {
+        @include flex(center);
+        flex-wrap: nowrap;
+        gap: .7em;
+        max-width: 55em;
+
+        h3 {
+            @include titleText(2.5rem);
+        }
+    }
+
+    .cart {
+        @include flex(flex-start);
+        flex-wrap: nowrap;
+        gap: .7em;
+
+        div {
+            width: 230px;
+            margin: 0;
+        }
+
+        h3 {
+            @include titleText(2.5rem);
+        }
+    }
+
+    .checkout-container {
+        background: rgba(238, 238, 238, .9);
+
+        .pay-summary {
+            display: flex;
+            
+            div {
+                padding-right: 3em;
+            }
+
+            .balance {
+                padding-top: 5.4em;
+            }
+        }
+    }
+}
+
+@media(min-width: 1200px) {
+    .shopping-cart {
+        background-position-y: 55%;
+    }
+
+    .cart-container {
+        display: flex;
+
+        .checkout-container {
+            background: rgba(238, 238, 238, .7);
+            position: absolute;
+            right: 0;
+            height: 76.6em;
+            display: flex;
+            flex-direction: column;
+            
+            .pay-summary div {
+                padding-left: 0;
+
+                &.balance {
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+}

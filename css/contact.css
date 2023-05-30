@@ -18,7 +18,6 @@ body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 3em;
   flex-direction: column-reverse;
 }
 .contact .contact-container .row form {
@@ -36,9 +35,6 @@ body {
   border-color: #ed2d34;
 }
 .contact .contact-container .row form .box::-moz-placeholder {
-  padding-left: 0.5em;
-}
-.contact .contact-container .row form .box:-ms-input-placeholder {
   padding-left: 0.5em;
 }
 .contact .contact-container .row form .box::placeholder {
@@ -62,9 +58,10 @@ body {
   padding: 1em 0;
 }
 .contact .contact-container .row .contact-info .icons {
-  padding: 1.5em 0;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 1.5em 0;
   gap: 1.5em;
 }
 .contact .contact-container .row .contact-info .icons i {
@@ -108,7 +105,8 @@ body {
 @media (min-width: 768px) {
   .contact .contact-container .row {
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    gap: 2em;
     grid-template-areas: "form info";
     width: 600px;
     margin: 0 auto;
@@ -124,19 +122,14 @@ body {
     border-radius: 0.5em;
   }
 }
-@media (min-width: 1024px) {
-  body {
-    background: none;
-  }
-}
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
   .contact {
     padding: 4em 5%;
     padding-top: 12em;
   }
   .contact .contact-container {
     display: grid;
-    grid-template-columns: 50% 40%;
+    grid-template-columns: 55% 40%;
     grid-template-areas: "row map";
     gap: 4em;
   }
@@ -149,5 +142,6 @@ body {
   }
   .contact .contact-container iframe {
     grid-area: map;
+    width: 450px;
   }
 }/*# sourceMappingURL=contact.css.map */

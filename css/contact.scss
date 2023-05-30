@@ -19,7 +19,6 @@ $border-radius: .5em;
     display: flex;
     align-items: $align;
     flex-wrap: wrap;
-    gap: 3em;
 }
  
 @mixin titleText($titleSize) {
@@ -92,9 +91,8 @@ body {
                 }
     
                 .icons {
+                    @include flex(center);
                     padding: 1.5em 0;
-                    display: flex;
-                    align-items: center;
                     gap: 1.5em;
     
                     i {
@@ -145,8 +143,7 @@ body {
 @media (min-width: 768px){
     .contact .contact-container {
         .row {
-            display: grid;
-            grid-template-columns: repeat(2, 50%);
+            @include grid(50%);
             grid-template-areas: 
             "form info";
             width: 600px;
@@ -168,20 +165,14 @@ body {
     }
 }
 
-@media (min-width: 1024px){
-    body {
-        background: none;
-    }
-}
-
-@media (min-width: 1440px){
+@media (min-width: 1200px){
     .contact {
         padding: 4em 5%;
         padding-top: 12em;
 
         .contact-container {
             display: grid;
-            grid-template-columns: 50% 40%;
+            grid-template-columns: 55% 40%;
             grid-template-areas: 
             "row map";
             gap: 4em;
@@ -197,6 +188,7 @@ body {
     
             iframe {
                 grid-area: map;
+                width: 450px;
             }
         }
     } 

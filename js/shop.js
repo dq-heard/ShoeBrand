@@ -1,58 +1,52 @@
-let menu = document.querySelector('#menu-btn');
-let navbar = document.querySelector('.navbar');
-
-menu.onclick = () =>{
-  menu.classList.toggle('fa-times');
-  navbar.classList.toggle('active');
-}
-
-window.onscroll = () =>{
-  menu.classList.remove('fa-times');
-  navbar.classList.remove('active');
-}
-
 const products = [
   {
     id: 1,
     img: "images/product-1.png",
     alt: "Gray and green Nike Venture sneakers",
     title: "Nike Venture",
+    price: "$54.99",
   },
   {
     id: 2,
     img: "images/product-2.png",
     alt: "Black white and yellow Nike Flex Experience sneakers",
-    title: "Nike Flex Experience RN",
+    title: "Nike Flex Experience 9",
+    price: "$69.99",
   },
   {
     id: 3,
     img: "images/product-3.png",
     alt: "White black and yellow Nike Flex Control sneakers",
     title: "Nike Flex Control 4",
+    price: "$47.99",
   },
   {
     id: 4,
     img: "images/product-4.png",
     alt: "Black blue and red Nike Air Zoom Pegasus sneakers",
     title: "Nike Air Zoom Pegasus 37",
+    price: "$64.99",
   },
   {
     id: 5,
     img: "images/product-5.png",
     alt: "Black white and red Nike Quest sneakers",
     title: "Nike Quest 3",
+    price: "$40.99",
   },
   {
     id: 6,
     img: "images/product-6.png",
     alt: "Blue and white Nike Renew Rival sneakers",
     title: "Nike Renew Rival 2",
+    price: "$56.99",
   },
 ];
 
 const img = document.querySelector(".product-img");
 const alt = document.querySelector("alt");
 const title = document.querySelector(".title");
+const price = document.querySelector(".price");
 
 let currentSlide = 0;
 
@@ -61,6 +55,7 @@ window.addEventListener("DOMContentLoaded", function () {
   img.src = slide.img;
   img.alt = slide.alt;
   title.textContent = slide.title;
+  price.textContent = slide.price;
 });
 
 function showSlide(slide) {
@@ -68,6 +63,7 @@ function showSlide(slide) {
   img.src = item.img;
   img.alt = item.alt;
   title.textContent = item.title;
+  price.textContent = item.price;
 }
 
 function next(){
