@@ -30,7 +30,7 @@ $border-radius: .5em;
     font-size: $graphSize;
     color: $white;
     line-height: 2;
-    padding: 1em 0;
+    padding: 1rem 0;
 }
 
 .hero-img {
@@ -49,7 +49,7 @@ $border-radius: .5em;
 
 .hero {
     height: 85vh;
-    padding-top: 12em;
+    padding-top: 12rem;
     
     .text {
         opacity: 0;
@@ -72,114 +72,149 @@ $border-radius: .5em;
 }
 
 .products {
-    background-color: $off-white;
-    padding-top: 2em;
+    @include flex(center);
+    justify-content: center;
+    background: $off-white;
+    padding:2rem 9% 6rem;
 
-    .heading {
-        padding-bottom: .3em;
-    }
+    .wrapper {
+        max-width: 1100px;
+        width: 100%;
+        position: relative;
 
-    .product-container {
-        @include flex(center);
-        gap: 1.5em;
-        max-width: 630px;
-        margin: 0 auto;
-    
-        .box {
-            border: .1rem solid rgba(0, 0, 0, .1);
-            border-radius: $border-radius;
+        #left {
+            left: -1.4rem;
+        }
+
+        #right {
+            right: -1.4rem;
+        }
+
+        #left, #right {
+            top: 50%;
+            height: 3.2rem;
+            width: 3.2rem;
+            cursor: pointer;
+            font-size: 2rem;
+            position: absolute;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            line-height: 3.2rem;
             background: $white;
-            flex: 1 1 30em;
-    
-            #prev {
-                left: .5em;
+            border-radius: 50%;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, .23);
+            transform: translateY(-50%);
+            transition: transform 0.1s linear;
+            z-index: 1;
+            color: $black;
+
+            &:hover {
+                color: $white;
+                background: $red;
             }
-        
-            #next {
-                right: .5em;
+
+            &:active {
+                transform: translateY(-50%) scale(0.85);
             }
-        
-            #prev, #next {
-                position: absolute;
-                top: 50%; 
-                transform: translateY(-50%);
-                border-radius: 50%;
-                z-index: 100;
-                height: 2.2em;
-                width: 2.2em;
-                line-height: 2em;
-                font-size: 2rem;
-                color: $black;
-                border: .1em solid $black;
-                cursor: pointer;
-                text-align: center;
-        
-                &:hover {
-                    color: $white;
-                    background: $red;
+        }
+
+        .carousel {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% / 3) - .75rem);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1rem;
+            border-radius: .5rem;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            transition: transform 1s;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            &.no-transition {
+                scroll-behavior: auto;
+            }
+
+            &.dragging {
+                scroll-snap-type: none;
+                scroll-behavior: auto;
+
+                &.swiper-slide {
+                    cursor: grab;
+                    user-select: none;
                 }
             }
-    
-            .icons {
-                display: flex;
-                flex-flow: column;
-                position: absolute;
-                top: .5em; 
-                left: -10em;
-    
-                a {
-                    height: 2em;
-                    width: 2em;
-                    line-height: 1.8em;
-                    font-size: 2rem;
-                    color: $black;
-                    border: .1em solid $black;
-                    border-radius: $border-radius;
-                    background: $white;
-                    margin-top: .5em;
-    
-                    &:hover {
-                        background: $red;
-                        color: $white;
+
+            .card {
+                scroll-snap-align: start;
+                list-style: none;
+                background: $white;
+                cursor: pointer;
+                padding-bottom: 1.2rem;
+                flex-direction: column;
+                border-radius: .5rem;
+                position: relative;
+
+                .icons {
+                    display: flex;
+                    flex-flow: column;
+                    position: absolute;
+                    top: .5rem;
+                    left: .5rem;
+                    opacity: 0;
+
+                    a {
+                        height: 3.5rem;
+                        width: 3.5rem;
+                        line-height: 1.6;
+                        font-size: 2rem;
+                        color: $black;
+                        border: .1em solid $black;
+                        border-radius: $border-radius;
+                        background: $white;
+                        margin-top: .5rem;
+                        text-align: center;
+
+                        &:hover {
+                            background: $red;
+                            color: $white;
+                        }
                     }
                 }
-            }
-    
-            &:hover .icons {
-                left: 1rem;
-            }
-    
-            .product-img {
-                height: 10em;
-                transform: rotate(-35deg);
-                filter: drop-shadow(0 .5em 1em rgba(0, 0, 0, .1));
-                margin: 8em 2em;
 
-                &:hover {
-                    transform: rotate(-35deg) scale(1.2);
+                &:hover .icons {
+                    left: 1.5rem;
+                    opacity: 1;
                 }
-            }
-    
-            .content {
-                padding: 1.5em;
 
-                h3 {
+                .product-img {
+                    height: 10rem;
+                    transform: rotate(-35deg);
+                    filter: drop-shadow(0 .5em 1em rgba(0, 0, 0, .1));
+                    margin: 8rem 2rem;
+
+                    &:hover {
+                        transform: rotate(-35deg) scale(1.2);
+                    }
+                }
+
+                .title {
+                    font-weight: bold;
                     font-size: 2.5rem;
                 }
-    
+
                 .price {
                     color: $black;
                     font-size: 2.5rem;
                     font-weight: bolder;
-                    padding: .4em 0;
+                    padding: .4rem 0;
                 }
-    
+
                 .stars {
-                    padding-bottom: 1em;
-    
+                    padding-bottom: 1rem;
+
                     i {
                         font-size: 1.7rem;
                         color: $red;
@@ -187,6 +222,24 @@ $border-radius: .5em;
                 }
             }
         }
+
+        :where(.card, .img) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+   
+@media screen and (max-width: 900px) {
+    .products .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .products .wrapper .carousel {
+        grid-auto-columns: 100%;
     }
 }
 
@@ -195,15 +248,15 @@ $border-radius: .5em;
 
     .row {
         @include flex(center);
-        gap: 1.5em;
+        gap: 1.5rem;
         border: .1em solid rgba(0, 0, 0, .1);
         border-radius: $border-radius;
         background: $off-white;
-        padding: 2em;
-        margin: 1.5em 0;
+        padding: 2rem;
+        margin: 1.5rem 0;
     
         .content {
-            flex: 1 1 40em;
+            flex: 1 1 40rem;
     
             h3 {
                 @include titleText(2.5rem);
@@ -214,14 +267,14 @@ $border-radius: .5em;
             .stars i {
                 font-size: 1.7rem;
                 color: $red;
-                padding: .5em 0;
+                padding: .5rem 0;
             }
     
             p {
                 @include graphText(1.7rem);
                 line-height: 1.4;
                 color: $light-color;
-                padding: 1em 0;
+                padding: 1rem 0;
             }
     
             .price {
@@ -233,14 +286,14 @@ $border-radius: .5em;
     
         .image-container {
             @include flex(center);
-            flex: 1 1 50em;
+            flex: 1 1 50rem;
     
             .small-image {
                 width: 20%;
     
                 img {
                     width: 100%;
-                    padding: 1em;
+                    padding: 1rem;
                     border: .1em solid rgba(0, 0, 0, .3);
                     cursor: pointer;
     
@@ -252,7 +305,7 @@ $border-radius: .5em;
     
             .big-image {
                 width: 80%;
-                padding: 1em;
+                padding: 1rem;
     
                 &:hover {
                     transform: scale(1.05);
@@ -269,11 +322,12 @@ $border-radius: .5em;
 .sale {
     @include flex(center);
     flex-wrap: wrap-reverse;
-    padding: 2em 9%;
-    padding-bottom: 6em;
+    padding: 2rem 9%;
+    padding-bottom: 6rem;
+    gap: 3rem;
  
     .content {
-        flex: 1 1 29em;
+        flex: 1 1 29rem;
  
         span {
             font-size: 2.5rem;
@@ -282,20 +336,20 @@ $border-radius: .5em;
  
         h3 {
             @include titleText(4rem);
-            padding-top: .3em;
+            padding-top: .3rem;
             line-height: 1.3;
             color: $black;
         }
  
         p {
-            padding: .3em 0;
+            padding: .3rem 0;
             @include graphText(1.7rem);
             color: $black;
         }
     }
  
     .image {
-        flex: 1 1 29em;
+        flex: 1 1 29rem;
  
         img {
             width: 100%;
@@ -313,7 +367,7 @@ $border-radius: .5em;
     width: 100%;
     background: rgba(0, 0, 0, .8);
     display: none;
-    padding: 2em 9%;
+    padding: 2rem 9%;
     
  
     .product-preview {
@@ -337,7 +391,8 @@ $border-radius: .5em;
         }
  
         .image {
-            flex: 1 1 33em;
+            flex: 1 1 33rem;
+            padding-bottom: 2rem;
  
             img {
                 width: 100%;
@@ -345,7 +400,7 @@ $border-radius: .5em;
         }
  
        .content {
-            flex: 1 1 20em;
+            flex: 1 1 20rem;
            
             h3 {
                 @include titleText(3rem);
@@ -358,7 +413,7 @@ $border-radius: .5em;
             }
  
             .stars {
-                padding: .2em 0;
+                padding: .2rem 0;
                 font-size: 1.7rem;
  
                 i {
@@ -373,10 +428,10 @@ $border-radius: .5em;
             .price {
                 @include titleText(3rem);
                 color: $red;
-                padding: .2em 0;
+                padding: .2rem 0;
 
                 span {
-                    @include graphText(2.5rem);
+                    @include graphText(1.6rem);
                     color: $black;
                     font-weight: bold;
                     text-decoration: line-through;
@@ -390,7 +445,17 @@ $border-radius: .5em;
     margin-top: 0;
 }
 
-@media (min-width: 768px){
+@media screen and (max-width: 370px) {
+    .hero, .hero-img {
+        height: 92vh;
+    }
+
+    .hero .text h1 {
+        line-height: 1.1;
+    }
+}
+
+@media screen and (min-width: 768px) {
     .hero-img {
         left: unset;
         right: 0;
@@ -406,36 +471,25 @@ $border-radius: .5em;
 
         .text {
             h1 {
-                line-height: 1;
+                line-height: 1.1;
             }
 
-            .subheading {
-                line-height: 1.3;
-                padding: .8em 0;
-            }
-        }
-
-        .down-arrow {
-            display: block;
-            stroke: $white;
-            padding-top: 2em;
-            animation: moveArrow 1.5s alternate-reverse infinite;
-    
-            path {
-                fill: $white;
-            }
+        //     .subheading {
+        //         line-height: 1.3;
+        //         padding: .8rem 0;
+        //     }
         }
     }
 
-    .loop {
+    .carousel {
         .title {
-            margin-top: .5em;
+            margin-top: .5rem;
             text-align: center;
         }
     }
 }
 
-@media (min-width: 1024px){
+@media screen and (min-width: 1024px) {
     .hero-img {
         background-position-y: 60%;
     }
@@ -447,13 +501,13 @@ $border-radius: .5em;
             padding-left: 0;
 
             .image {
-                width: 32em;
+                width: 32rem;
             }
         }
     }
 }
 
-@media (min-width: 1200px){
+@media screen and (min-width: 1200px) {
     .hero {
         .text {
             h1 {
@@ -462,7 +516,18 @@ $border-radius: .5em;
             
             .subheading {
                 line-height: 1.5;
-                padding: 1em 0;
+                padding: 1rem 0;
+            }
+        }
+
+        .down-arrow {
+            display: block;
+            stroke: $white;
+            padding-top: 4rem;
+            animation: moveArrow 1.5s alternate-reverse infinite;
+    
+            path {
+                fill: $white;
             }
         }
     }

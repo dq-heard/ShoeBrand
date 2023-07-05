@@ -46,50 +46,7 @@
 <main>
 <section class="home">
 
-    <div class="slide-container active">
-        <div class="slide">
-            <div class="content">
-                <span>Red Version</span>
-                <h3>Nike Metcon Shoes</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maiores et eos eaque veritatis aut laboriosam earum dolorem iste atque.</p>
-                <a href="#" class="btn">Add to Cart</a>
-            </div>
-            <div class="image">
-                <img src="images/home-shoe-1.png" class="shoe" alt="" aria-hidden="true">
-                <img src="images/home-text-1.png" class="text" alt="" aria-hidden="true">
-            </div>
-        </div>
-    </div>
-
-    <div class="slide-container">
-        <div class="slide">
-            <div class="content">
-                <span>Blue Version</span>
-                <h3>Nike Metcon Shoes</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maiores et eos eaque veritatis aut laboriosam earum dolorem iste atque.</p>
-                <a href="#" class="btn">Add to Cart</a>
-            </div>
-            <div class="image">
-                <img src="images/home-shoe-2.png" class="shoe" alt="" aria-hidden="true">
-                <img src="images/home-text-2.png" class="text" alt="" aria-hidden="true">
-            </div>
-        </div>
-    </div>
-
-    <div class="slide-container">
-        <div class="slide">
-            <div class="content">
-                <span>Yellow Version</span>
-                <h3>Nike Metcon Shoes</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maiores et eos eaque veritatis aut laboriosam earum dolorem iste atque.</p>
-                <a href="#" class="btn">Add to Cart</a>
-            </div>
-            <div class="image">
-                <img src="images/home-shoe-3.png" class="shoe" alt="" aria-hidden="true">
-                <img src="images/home-text-3.png" class="text" alt="" aria-hidden="true">
-            </div>
-        </div>
-    </div>
+    <div id="shoe-container"></div>
 
     <div id="prev" class="fas fa-chevron-left" onclick="prev()"></div>
     <div id="next" class="fas fa-chevron-right" onclick="next()"></div>
@@ -105,19 +62,14 @@
     <h3 class="heading">Sneaker Hunting for the <span>Modern</span> Era.</h3>
 
     <div class="box-container">
-        
         <div class="box">
-            <img class="feature-img" src="./images/shoe4.jpg" alt="Light gray shoes jumping in grass field">
+            <img class="feature-img" src="" alt="">
     
             <div class="content">
-                <h3 class="title">JS Broke</h3>
-
-                <p class="desc">Lorem ipsum dolor, sit amet consectetur 
-                 adipisicing elit. Repellendus voluptatem, vitae dicta 
-                 animi qui veniam.</p>
+                <h3 class="title"></h3>
+                <p class="desc"></p>
             </div>
         </div>
-    
     </div>
     
 </section>
@@ -134,25 +86,25 @@
 
         <h1 class="heading"><span>Satisfaction</span> Guaranteed.</h1>
 
-       <div class="box">
-          <i class="fas fa-check-circle" aria-hidden="true"></i>
-          <h4>100% Authentic</h4>
-       </div>
-    
-       <div class="box">
-          <i class="fas fa-shipping-fast" aria-hidden="true"></i>
-          <h4>Free Delivery</h4>
-       </div>
-    
-       <div class="box">
-          <i class="fas fa-redo" aria-hidden="true"></i>
-          <h4>10-Day Returns</h4>
-       </div>
-    
-       <div class="box">
-          <i class="fas fa-headset" aria-hidden="true"></i>
-          <h4>24/7 Support</h4>
-       </div>
+        <div class="box">
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+            <h4>100% Authentic</h4>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-shipping-fast" aria-hidden="true"></i>
+            <h4>Free Delivery</h4>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-redo" aria-hidden="true"></i>
+            <h4>10-Day Returns</h4>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-headset" aria-hidden="true"></i>
+            <h4>24/7 Support</h4>
+        </div>
     </div>
  
 </section>
@@ -168,7 +120,7 @@
     <div class="box-container">
 
         <div class="box">
-            <img src="images/user1.jpg" alt="">
+            <img src="images/user1.jpg" alt="Male Testimonial #1">
             <h3>John Doe</h3>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
              Fugiat, quos eum. Laborum aut a consequatur ducimus, molestias 
@@ -177,7 +129,7 @@
         </div>
 
         <div class="box">
-            <img src="images/user2.jpg" alt="">
+            <img src="images/user2.jpg" alt="Female Testimonial">
             <h3>Jane Doe</h3>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
              Fugiat, quos eum. Laborum aut a consequatur ducimus, molestias 
@@ -186,7 +138,7 @@
         </div>
 
         <div class="box">
-            <img src="images/user3.jpg" alt="">
+            <img src="images/user3.jpg" alt="Male Testimonial #2">
             <h3>James Smith</h3>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
              Fugiat, quos eum. Laborum aut a consequatur ducimus, molestias 
@@ -206,7 +158,9 @@
 
     <div class="content">
         <h3>Monthly Newsletter</h3>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum ullam veniam at itaque culpa hic corporis saepe dicta doloremque nihil.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Earum ullam veniam at itaque culpa hic corporis saepe 
+            dicta doloremque.</p>
         <form action="#">
             <input type="email" placeholder="Enter Your E-mail" class="box">
             <input type="submit" value="Send" class="btn">
@@ -231,7 +185,6 @@
     </ul>
 
 </footer>
-
 
 <!-- custom js file links -->
 <script src="js/nav.js"></script>

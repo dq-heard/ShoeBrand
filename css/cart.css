@@ -1,115 +1,108 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap");
 @import url("style.css");
 body {
-  padding-top: 6em;
+  padding-top: 6rem;
   background: none;
 }
 
 h2, h3 {
-  padding: 0.5em 0 0;
+  padding: 0.5rem 0 0;
   font-size: 3rem;
   color: #444;
 }
 
 p, label, .cart {
-  padding: 0.5em;
+  padding: 0.5rem;
   font-size: 1.6rem;
   color: #444;
   line-height: 1.5;
-  padding: 1em 0;
+  padding: 1rem 0;
+}
+
+.products, .cart {
+  padding-top: 1rem;
 }
 
 .products-container {
   width: 100%;
-  padding: 2em;
+  padding: 2rem;
+}
+.products-container .products div {
+  background: rgba(238, 238, 238, 0.7);
+  margin: 1rem auto;
+  padding: 2rem;
+  border-radius: 0.5em;
+  width: 245px;
+  display: block;
+}
+.products-container .products img {
+  max-width: 200px;
+  height: auto;
+}
+.products-container .products h3 {
+  font-weight: bold;
+}
+.products-container .products p {
+  padding: 0.5rem 0;
 }
 .products-container .cart-title {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 2em;
+  align-items: center;
+  gap: 2rem;
 }
-.products-container .right-side .btn {
+.products-container .cart-title .empty-btn {
   border: 0;
   border-radius: 0.5em;
-  padding: 0.5em;
+  padding: 0.8rem;
   background-color: #666;
+  font-size: 1.3rem;
 }
-.products-container .right-side .btn:hover {
+.products-container .cart-title .empty-btn:hover {
   background-color: #eee;
   color: #ed2d34;
 }
-.products-container .right-side .btn.empty-btn {
-  margin-top: 1.3em;
-  font-size: 1.3rem;
+.products-container .cart {
+  margin: 0 auto;
+}
+.products-container .cart div {
+  border-radius: 0.5em;
+  background: rgba(238, 238, 238, 0.8);
+  margin: 1rem auto;
+  padding: 1rem 0 2rem 1.5rem;
+  width: 260px;
+}
+.products-container .cart p {
+  padding: 0.3rem;
 }
 
 .checkout-container {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  padding: 2em;
+  padding: 2rem;
   background: #eee;
 }
-.checkout-container .pay-summary div:not(balance) {
-  padding-left: 3em;
+.checkout-container .checkout-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.checkout-container .pay-summary div:not(balance).balance {
-  padding-top: 5.4em;
+.checkout-container .checkout-title .currency-selector {
+  padding-top: 0.4rem;
 }
-
-.products, .cart {
-  padding-top: 1em;
+.checkout-container .checkout {
+  padding-bottom: 3rem;
 }
-
-.products div {
-  background: rgba(238, 238, 238, 0.7);
-  margin: 1em auto;
-  padding: 2em;
-  border-radius: 0.5em;
-  width: 245px;
+.checkout-container .checkout .btn, .checkout-container .checkout input {
   display: block;
 }
-.products img {
-  max-width: 200px;
-  height: auto;
+.checkout-container .pay-summary h3 {
+  padding-top: 1rem;
 }
-.products h3 {
-  font-weight: bold;
+.checkout-container .pay-summary p {
+  padding: 0.5rem 0;
 }
-.products p {
-  padding: 0.5em 0;
-}
-
-.cart {
-  margin: 0 auto;
-}
-.cart div {
-  border-radius: 0.5em;
-  background: rgba(238, 238, 238, 0.8);
-  margin: 1em auto;
-  padding: 1em 0 2em 1.5em;
-  width: 260px;
-}
-.cart p {
-  padding: 0.3em;
-}
-
-.checkout {
-  margin-bottom: 4em;
-}
-.checkout .btn, .checkout input {
-  display: block;
-}
-
-.pay-summary h3 {
-  padding-top: 1em;
-}
-.pay-summary p {
-  padding: 0.5em 0;
-}
-
-.received {
+.checkout-container .received {
   padding: 0.3em;
   border: 1px solid #666;
   border-radius: 0.5em;
@@ -120,13 +113,24 @@ p, label, .cart {
   margin-top: 0;
 }
 
-@media (min-width: 560px) {
+@media screen and (min-width: 375px) {
+  .checkout-container {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 9%;
+  }
+  .checkout-container .checkout-title {
+    gap: 6rem;
+  }
+  .checkout-container .pay-summary div.balance {
+    padding-top: 3rem;
+  }
+}
+@media screen and (min-width: 568px) {
   .shopping-cart {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/hero1.jpg);
     background-position-x: center;
-  }
-  .products {
-    width: 240px;
   }
   .products-container {
     display: flex;
@@ -134,23 +138,20 @@ p, label, .cart {
     flex-wrap: wrap;
     gap: 2em;
   }
+  .products-container .products {
+    width: 240px;
+  }
   .products-container h2, .products-container .cart {
     color: #fff;
   }
   .checkout-container {
     background: rgba(238, 238, 238, 0.93);
   }
-  .checkout-container .left-side {
-    width: 270px;
-  }
-  .checkout-container .right-side h3 {
-    padding-top: 0.5em;
-  }
   .footer {
     border-radius: 0;
   }
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .products-container {
     display: block;
     width: 768px;
@@ -158,47 +159,48 @@ p, label, .cart {
   .products-container .right-side {
     height: 375px;
   }
-  .products {
+  .products-container .products {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     flex-wrap: nowrap;
-    gap: 0.7em;
-    max-width: 55em;
+    gap: 0.7rem;
+    max-width: 55rem;
   }
-  .products h3 {
+  .products-container .products h3 {
     font-size: 2.5rem;
     color: #444;
   }
-  .cart {
+  .products-container .cart {
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
     flex-wrap: nowrap;
-    gap: 0.7em;
+    gap: 0.7rem;
   }
-  .cart div {
+  .products-container .cart div {
     width: 230px;
     margin: 0;
   }
-  .cart h3 {
+  .products-container .cart h3 {
     font-size: 2.5rem;
     color: #444;
   }
   .checkout-container {
     background: rgba(238, 238, 238, 0.9);
+    gap: 0;
   }
   .checkout-container .pay-summary {
     display: flex;
   }
   .checkout-container .pay-summary div {
-    padding-right: 3em;
+    padding-right: 3rem;
   }
   .checkout-container .pay-summary .balance {
-    padding-top: 5.4em;
+    padding-top: 5.4rem;
   }
 }
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   .shopping-cart {
     background-position-y: 55%;
   }
@@ -209,9 +211,10 @@ p, label, .cart {
     background: rgba(238, 238, 238, 0.7);
     position: absolute;
     right: 0;
-    height: 76.6em;
+    height: 73rem;
     display: flex;
     flex-direction: column;
+    max-width: 314px;
   }
   .cart-container .checkout-container .pay-summary div {
     padding-left: 0;

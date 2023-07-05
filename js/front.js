@@ -138,9 +138,9 @@ document.querySelector('.pay').addEventListener('click', (e) => {
     }
 
     paymentSummary.append(div);
-    setTimeout(() => {
-        paymentSummary.removeChild(div);
-    }, 3000);
+    // setTimeout(() => {
+    //     paymentSummary.removeChild(div);
+    // }, 5000);
       
 });
 
@@ -162,3 +162,38 @@ document.querySelector('.empty-btn').addEventListener('click', (e) => {
         drawCheckout();
     }
 })
+
+// Change currency
+function currencyBuilder() {
+    let currencyPicker = document.querySelector('.currency-selector');
+    let select = document.createElement("select");
+    select.classList.add("currency-select");
+    select.innerHTML = `<option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="YEN">YEN</option>
+                        <option value="GBP">GBP</option>`;
+    currencyPicker.append(select);
+}
+currencyBuilder();
+
+document.querySelector('.currency-select').addEventListener('change', function handleChange(e) {
+    switch(e.target.value) {
+        case 'EUR':
+            currencySymbol = '€';
+            break;
+        case 'YEN':
+            currencySymbol = '¥';
+            break;
+        case 'GBP':
+            currencySymbol = '£';
+            break;
+        default:
+            currencySymbol = '$';
+            break;
+    }
+
+    currency(e.target.value);
+    drawProducts();
+    drawCart();
+    drawCheckout();
+});

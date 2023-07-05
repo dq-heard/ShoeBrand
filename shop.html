@@ -66,34 +66,12 @@
 
     <h1 class="heading"><span>Newest </span>Arrivals</h1>
 
-    <div class="product-container active">
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-share"></a>
-                <a href="#" class="fas fa-eye"></a>
-            </div>
-            <img class="product-img" src="images/banner-product.png" alt="">
-            <div class="content">
-                <h3 class="title">Nike AirMax</h3>
-                <div class="price">$120.99 <span>$150.99</span></div>
-                <div class="stars" aria-hidden="true">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>
-                <a href="#" class="btn">Add to Cart</a>
-
-                <div id="prev" class="fas fa-chevron-left" onclick="prev()"></div>
-                <div id="next" class="fas fa-chevron-right" onclick="next()"></div>
-            </div>
-        </div>
-
+    <div class="wrapper">
+        
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <ul class="carousel"></ul>
+        <i id="right" class="fa-solid fa-angle-right"></i>
     </div>
-
 </section>
 
 <!-- products section ends -->
@@ -220,7 +198,7 @@
  
     <div class="product-preview">
        
-       <button class="close-btn"><i class="fas fa-times"></i></button>
+       <button class="close-btn fas fa-times" title="Close"></button>
  
         <div class="image">
             <img src="images/product-img1.jpg" alt="Red and black Air Max shoe">

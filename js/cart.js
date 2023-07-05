@@ -2,21 +2,21 @@ const products = [
   {
     productId: 100,
     name: "Air Max Tavas",
-    price: 60,
+    price: 59.99,
     quantity: 0,
     image: "./images/product-img1.jpg"
   },
   {
     productId: 101,
     name: "Jordan 1 Retro",
-    price: 150,
+    price: 149.99,
     quantity: 0,
     image: "./images/product-img2.jpg"
   },
   {
     productId: 102,
     name: "KD 9 Brooklyn",
-    price: 240,
+    price: 239.99,
     quantity: 0,
     image: "./images/product-img3.jpg"
   },
@@ -118,6 +118,20 @@ function pay(amount) {
   }
 }
 
+const originalPrices = products.map(product => product.price);
+const exchangeRates = {
+  USD: 1,
+  EUR: 0.85,
+  YEN: 110.14,
+  GBP: 0.72
+};
+
+function currency(currencyCode) {
+  products.forEach((product, index) => {
+    product.price = (originalPrices[index] * exchangeRates[currencyCode]).toFixed(2);
+  });
+}
+
 module.exports = {
   products,
   cart,
@@ -127,5 +141,6 @@ module.exports = {
   removeProductFromCart,
   cartTotal,
   pay, 
-  emptyCart
+  emptyCart,
+  currency
 }

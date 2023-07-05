@@ -16,7 +16,7 @@
 
 .hero {
   height: 85vh;
-  padding-top: 12em;
+  padding-top: 12rem;
 }
 .hero .text {
   opacity: 0;
@@ -31,7 +31,7 @@
   font-size: 2.8rem;
   color: #fff;
   line-height: 2;
-  padding: 1em 0;
+  padding: 1rem 0;
   line-height: 1.5;
 }
 .hero .down-arrow {
@@ -39,108 +39,156 @@
 }
 
 .products {
-  background-color: #eee;
-  padding-top: 2em;
-}
-.products .heading {
-  padding-bottom: 0.3em;
-}
-.products .product-container {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1.5em;
-  max-width: 630px;
-  margin: 0 auto;
+  justify-content: center;
+  background: #eee;
+  padding: 2rem 9% 6rem;
 }
-.products .product-container .box {
-  border: 0.1rem solid rgba(0, 0, 0, 0.1);
-  border-radius: 0.5em;
-  text-align: center;
+.products .wrapper {
+  max-width: 1100px;
+  width: 100%;
   position: relative;
-  overflow: hidden;
-  background: #fff;
-  flex: 1 1 30em;
 }
-.products .product-container .box #prev {
-  left: 0.5em;
+.products .wrapper #left {
+  left: -1.4rem;
 }
-.products .product-container .box #next {
-  right: 0.5em;
+.products .wrapper #right {
+  right: -1.4rem;
 }
-.products .product-container .box #prev, .products .product-container .box #next {
-  position: absolute;
+.products .wrapper #left, .products .wrapper #right {
   top: 50%;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  z-index: 100;
-  height: 2.2em;
-  width: 2.2em;
-  line-height: 2em;
-  font-size: 2rem;
-  color: #444;
-  border: 0.1em solid #444;
+  height: 3.2rem;
+  width: 3.2rem;
   cursor: pointer;
+  font-size: 2rem;
+  position: absolute;
   text-align: center;
+  line-height: 3.2rem;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+  z-index: 1;
+  color: #444;
 }
-.products .product-container .box #prev:hover, .products .product-container .box #next:hover {
+.products .wrapper #left:hover, .products .wrapper #right:hover {
   color: #fff;
   background: #ed2d34;
 }
-.products .product-container .box .icons {
+.products .wrapper #left:active, .products .wrapper #right:active {
+  transform: translateY(-50%) scale(0.85);
+}
+.products .wrapper .carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(33.3333333333% - 0.75rem);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  transition: transform 1s;
+}
+.products .wrapper .carousel::-webkit-scrollbar {
+  display: none;
+}
+.products .wrapper .carousel.no-transition {
+  scroll-behavior: auto;
+}
+.products .wrapper .carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.products .wrapper .carousel.dragging.swiper-slide {
+  cursor: grab;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.products .wrapper .carousel .card {
+  scroll-snap-align: start;
+  list-style: none;
+  background: #fff;
+  cursor: pointer;
+  padding-bottom: 1.2rem;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  position: relative;
+}
+.products .wrapper .carousel .card .icons {
   display: flex;
   flex-flow: column;
   position: absolute;
-  top: 0.5em;
-  left: -10em;
+  top: 0.5rem;
+  left: 0.5rem;
+  opacity: 0;
 }
-.products .product-container .box .icons a {
-  height: 2em;
-  width: 2em;
-  line-height: 1.8em;
+.products .wrapper .carousel .card .icons a {
+  height: 3.5rem;
+  width: 3.5rem;
+  line-height: 1.6;
   font-size: 2rem;
   color: #444;
   border: 0.1em solid #444;
   border-radius: 0.5em;
   background: #fff;
-  margin-top: 0.5em;
+  margin-top: 0.5rem;
+  text-align: center;
 }
-.products .product-container .box .icons a:hover {
+.products .wrapper .carousel .card .icons a:hover {
   background: #ed2d34;
   color: #fff;
 }
-.products .product-container .box:hover .icons {
-  left: 1rem;
+.products .wrapper .carousel .card:hover .icons {
+  left: 1.5rem;
+  opacity: 1;
 }
-.products .product-container .box .product-img {
-  height: 10em;
+.products .wrapper .carousel .card .product-img {
+  height: 10rem;
   transform: rotate(-35deg);
   filter: drop-shadow(0 0.5em 1em rgba(0, 0, 0, 0.1));
-  margin: 8em 2em;
+  margin: 8rem 2rem;
 }
-.products .product-container .box .product-img:hover {
+.products .wrapper .carousel .card .product-img:hover {
   transform: rotate(-35deg) scale(1.2);
 }
-.products .product-container .box .content {
-  padding: 1.5em;
-}
-.products .product-container .box .content h3 {
+.products .wrapper .carousel .card .title {
+  font-weight: bold;
   font-size: 2.5rem;
 }
-.products .product-container .box .content .price {
+.products .wrapper .carousel .card .price {
   color: #444;
   font-size: 2.5rem;
   font-weight: bolder;
-  padding: 0.4em 0;
+  padding: 0.4rem 0;
 }
-.products .product-container .box .content .stars {
-  padding-bottom: 1em;
+.products .wrapper .carousel .card .stars {
+  padding-bottom: 1rem;
 }
-.products .product-container .box .content .stars i {
+.products .wrapper .carousel .card .stars i {
   font-size: 1.7rem;
   color: #ed2d34;
 }
+.products .wrapper :where(.card, .img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+@media screen and (max-width: 900px) {
+  .products .wrapper .carousel {
+    grid-auto-columns: calc(50% - 9px);
+  }
+}
+@media screen and (max-width: 600px) {
+  .products .wrapper .carousel {
+    grid-auto-columns: 100%;
+  }
+}
 .featured {
   padding: 2rem 9%;
 }
@@ -148,15 +196,15 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1.5em;
+  gap: 1.5rem;
   border: 0.1em solid rgba(0, 0, 0, 0.1);
   border-radius: 0.5em;
   background: #eee;
-  padding: 2em;
-  margin: 1.5em 0;
+  padding: 2rem;
+  margin: 1.5rem 0;
 }
 .featured .row .content {
-  flex: 1 1 40em;
+  flex: 1 1 40rem;
 }
 .featured .row .content h3 {
   font-size: 2.5rem;
@@ -167,16 +215,16 @@
 .featured .row .content .stars i {
   font-size: 1.7rem;
   color: #ed2d34;
-  padding: 0.5em 0;
+  padding: 0.5rem 0;
 }
 .featured .row .content p {
   font-size: 1.7rem;
   color: #fff;
   line-height: 2;
-  padding: 1em 0;
+  padding: 1rem 0;
   line-height: 1.4;
   color: #666;
-  padding: 1em 0;
+  padding: 1rem 0;
 }
 .featured .row .content .price {
   font-size: 2.5rem;
@@ -187,14 +235,14 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  flex: 1 1 50em;
+  flex: 1 1 50rem;
 }
 .featured .row .image-container .small-image {
   width: 20%;
 }
 .featured .row .image-container .small-image img {
   width: 100%;
-  padding: 1em;
+  padding: 1rem;
   border: 0.1em solid rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
@@ -203,7 +251,7 @@
 }
 .featured .row .image-container .big-image {
   width: 80%;
-  padding: 1em;
+  padding: 1rem;
 }
 .featured .row .image-container .big-image:hover {
   transform: scale(1.05);
@@ -217,11 +265,12 @@
   align-items: center;
   flex-wrap: wrap;
   flex-wrap: wrap-reverse;
-  padding: 2em 9%;
-  padding-bottom: 6em;
+  padding: 2rem 9%;
+  padding-bottom: 6rem;
+  gap: 3rem;
 }
 .sale .content {
-  flex: 1 1 29em;
+  flex: 1 1 29rem;
 }
 .sale .content span {
   font-size: 2.5rem;
@@ -230,20 +279,20 @@
 .sale .content h3 {
   font-size: 4rem;
   color: #fff;
-  padding-top: 0.3em;
+  padding-top: 0.3rem;
   line-height: 1.3;
   color: #444;
 }
 .sale .content p {
-  padding: 0.3em 0;
+  padding: 0.3rem 0;
   font-size: 1.7rem;
   color: #fff;
   line-height: 2;
-  padding: 1em 0;
+  padding: 1rem 0;
   color: #444;
 }
 .sale .image {
-  flex: 1 1 29em;
+  flex: 1 1 29rem;
 }
 .sale .image img {
   width: 100%;
@@ -259,7 +308,7 @@
   width: 100%;
   background: rgba(0, 0, 0, 0.8);
   display: none;
-  padding: 2em 9%;
+  padding: 2rem 9%;
 }
 .modal .product-preview {
   display: flex;
@@ -282,13 +331,14 @@
   transform: scale(1.3);
 }
 .modal .product-preview .image {
-  flex: 1 1 33em;
+  flex: 1 1 33rem;
+  padding-bottom: 2rem;
 }
 .modal .product-preview .image img {
   width: 100%;
 }
 .modal .product-preview .content {
-  flex: 1 1 20em;
+  flex: 1 1 20rem;
 }
 .modal .product-preview .content h3 {
   font-size: 3rem;
@@ -299,11 +349,11 @@
   font-size: 1.5rem;
   color: #fff;
   line-height: 2;
-  padding: 1em 0;
+  padding: 1rem 0;
   color: #444;
 }
 .modal .product-preview .content .stars {
-  padding: 0.2em 0;
+  padding: 0.2rem 0;
   font-size: 1.7rem;
 }
 .modal .product-preview .content .stars i {
@@ -316,13 +366,13 @@
   font-size: 3rem;
   color: #fff;
   color: #ed2d34;
-  padding: 0.2em 0;
+  padding: 0.2rem 0;
 }
 .modal .product-preview .content .price span {
-  font-size: 2.5rem;
+  font-size: 1.6rem;
   color: #fff;
   line-height: 2;
-  padding: 1em 0;
+  padding: 1rem 0;
   color: #444;
   font-weight: bold;
   text-decoration: line-through;
@@ -332,7 +382,15 @@
   margin-top: 0;
 }
 
-@media (min-width: 768px) {
+@media screen and (max-width: 370px) {
+  .hero, .hero-img {
+    height: 92vh;
+  }
+  .hero .text h1 {
+    line-height: 1.1;
+  }
+}
+@media screen and (min-width: 768px) {
   .hero-img {
     left: unset;
     right: 0;
@@ -346,27 +404,14 @@
     background-color: #666;
   }
   .hero .text h1 {
-    line-height: 1;
+    line-height: 1.1;
   }
-  .hero .text .subheading {
-    line-height: 1.3;
-    padding: 0.8em 0;
-  }
-  .hero .down-arrow {
-    display: block;
-    stroke: #fff;
-    padding-top: 2em;
-    animation: moveArrow 1.5s alternate-reverse infinite;
-  }
-  .hero .down-arrow path {
-    fill: #fff;
-  }
-  .loop .title {
-    margin-top: 0.5em;
+  .carousel .title {
+    margin-top: 0.5rem;
     text-align: center;
   }
 }
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .hero-img {
     background-position-y: 60%;
   }
@@ -376,16 +421,25 @@
     padding-left: 0;
   }
   .modal .product-preview .image {
-    width: 32em;
+    width: 32rem;
   }
 }
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   .hero .text h1 {
     line-height: 1.2;
   }
   .hero .text .subheading {
     line-height: 1.5;
-    padding: 1em 0;
+    padding: 1rem 0;
+  }
+  .hero .down-arrow {
+    display: block;
+    stroke: #fff;
+    padding-top: 4rem;
+    animation: moveArrow 1.5s alternate-reverse infinite;
+  }
+  .hero .down-arrow path {
+    fill: #fff;
   }
 }
 @keyframes moveDown {
