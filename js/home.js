@@ -130,6 +130,15 @@ const desc = document.querySelector(".desc");
 
 let currentSlide = 0;
 
+const preloadImages = (features) => {
+  features.forEach((feature) => {
+    const img = new Image();
+    img.src = feature.img;
+  });
+};
+
+preloadImages(features);
+
 window.addEventListener("DOMContentLoaded", function () {
   const slide = features[currentSlide];
   img.src = slide.img;

@@ -190,6 +190,7 @@ carousel.addEventListener("scroll", infiniteScroll);
 wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
 wrapper.addEventListener("mouseleave", autoPlay);
 
+// Modal Section
 const modal = document.querySelector('.modal');
 const modalBtn = document.querySelector('#modal-btn');
 const closeBtn = document.querySelector('.close-btn');
